@@ -15,8 +15,7 @@ import org.zerock.board.entity.Board;
 import org.zerock.board.entity.Member;
 import org.zerock.board.repository.BoardRepository;
 import org.zerock.board.repository.ReplyRepository;
-import org.zerock.board.repository.search.SearchBoardRepository;
-import org.zerock.board.repository.search.SearchBoardRepositoryImpl;
+
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

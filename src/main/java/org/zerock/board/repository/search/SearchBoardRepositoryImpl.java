@@ -69,11 +69,12 @@ public class SearchBoardRepositoryImpl
     QMember member = QMember.member;
 
     //2) Join with QDomain
+    //검색을 하기 위한 JPQLQuery가 만들어짐
     JPQLQuery<Board> jpqlQuery = from(board);
     jpqlQuery.leftJoin(member).on(board.writer.eq(member));
     jpqlQuery.leftJoin(reply).on(reply.board.eq(board));
 
-    //3) Query Execution. When It is not one Entity.
+    //3)JPQLQuery가 가져오고 싶은 데이터를 선택함
     // Tuple : 동적인 query에 대하여 복합 데이터를 추출하는 경우에 사용
     // Tuple : Used when extracting complex data for a dynamic query
     JPQLQuery<Tuple> jpqlQueryTuple = jpqlQuery.select(board, member, reply.count());
